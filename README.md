@@ -1,2 +1,2 @@
 # Solutions to Google Python Class Exercises
-This is my repo for the excersices in google-python-exercises class
+This is my repo with solution to excersices provided in google-python-exercises class as a first contact with Python challenges
