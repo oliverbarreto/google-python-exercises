@@ -6,3 +6,6 @@ This is my repo with solution to excersices provided in google-python-exercises 
 1. Playing with String and Slicing Python Ranges in:
   * string1.py
   * string2.py
+
+2. Playing with strings, lists and tuples... orderting and extracting elements...
+  * list1.py
