@@ -46,11 +46,12 @@ import sys
 # Then print_words() and print_top() can just call the utility function.
 
 def readFile(filename):
+  """ Reads the file contents and returns a list with all words splited from the text after calling "text.title()"...textList
+  which returns a Camel Case string to reduce errors with capitalization
+  """
   file = open(filename,"rU")
   text = file.read()
   
-  #  Returns a list with all words splited from the text after calling "text.title()"...textList
-  # which returns a Camel Case string to reduce errors with capitalization
   textList = text.title().split()
   print(textList)
   file.close()
@@ -59,6 +60,9 @@ def readFile(filename):
   
   
 def countWords(words):
+  """ Counts words in the text and creates a dict with 
+  words as keys and counts as value
+  """
   wordsCount = {}
   for word in words:
     if word not in wordsCount:
@@ -69,23 +73,37 @@ def countWords(words):
   return wordsCount
 
 
+def processFile(filename, sortedTop=False):
+  """ Makes different calls to utility methods according to program arguments
+  """
+  wordsList = readFile(filename)
+  results = countWords(wordsList)
+
+  if not sortedTop:
+    prettyPrinter(results, 0)
+  else:
+    # Print the first 20
+    orderedResults = dict(sorted(results.items(), key=lambda x: x[1], reverse = True)[:20]) 
+    prettyPrinter(orderedResults)
+
 
 def prettyPrinter(dictionary):
+  """ Provides Pretty Printing for output
+  """
+  
   for (index, item) in enumerate(dictionary.items()):
     print(index, item[0], " -> ", item[1])
 
 
+### MAIN CODE HERE
+
 
 def print_words(filename):
-  wordsList = readFile(filename)
-  results = countWords(wordsList)
-
-  prettyPrinter(results)
-
-  
+  processFile(filename, sortedTop=False)
 
 def print_top(filename):
-  print("****TODO****")
+  processFile(filename, sortedTop=True)
+
 
 ###
 
