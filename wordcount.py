@@ -53,7 +53,7 @@ def readFile(filename):
   text = file.read()
   
   textList = text.title().split()
-  print(textList)
+  #print(textList)
   file.close()
 
   return textList
