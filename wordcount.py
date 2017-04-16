@@ -52,7 +52,7 @@ def readFile(filename):
   file = open(filename,"rU")
   text = file.read()
   
-  textList = text.title().split()
+  textList = text.split()
   #print(textList)
   file.close()
 
@@ -80,7 +80,7 @@ def processFile(filename, sortedTop=False):
   results = countWords(wordsList)
 
   if not sortedTop:
-    prettyPrinter(results, 0)
+    prettyPrinter(results)
   else:
     # Print the first 20
     orderedResults = dict(sorted(results.items(), key=lambda x: x[1], reverse = True)[:20]) 

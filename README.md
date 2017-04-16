@@ -11,6 +11,7 @@ This is my repo with solution to excersices provided in google-python-exercises 
   * list1.py
   * list2.py
 
-3. Playing with dictionaries ... accessing and iteratitng dicts...
+3. Playing with dictionaries ... accessing and iteratitng dicts... while openingwith textfiles
   * WordCount.py
-  
+  * Mimic.py
+
